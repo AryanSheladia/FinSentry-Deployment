@@ -11,9 +11,11 @@ ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=2 OPENBLAS_NUM_
 RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
 COPY backend/requirements-lock.txt /app/requirements-lock.txt
 RUN pip install --no-cache-dir -r /app/requirements-lock.txt
-COPY deployment/ /app/deployment/
+COPY deployment/restore_artifacts.py deployment/artifacts.lock.json /app/deployment/
 RUN python deployment/restore_artifacts.py
 COPY backend/ /app/backend/
+COPY deployment/ /app/deployment/
+RUN python deployment/prepare_catalog.py
 COPY data/sparkov/ /app/data/sparkov/
 COPY --from=frontend /web/dist /app/frontend/dist
 EXPOSE 8000

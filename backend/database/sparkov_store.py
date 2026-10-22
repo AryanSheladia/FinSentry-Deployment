@@ -33,6 +33,19 @@ class SparkovStore:
         return [dict(row) for row in rows]
 
     def options(self):
+        # Cloud images precompute this exact read-only catalog during the build.
+        # Check the source build so a stale catalog cannot follow a new store.
+        cached=self.path.with_name("options.json")
+        if cached.is_file():
+            try:
+                item=json.loads(cached.read_text(encoding="utf-8"))
+                with closing(self.connect()) as db:
+                    metadata=json.loads(db.execute("SELECT metadata_json FROM artifact_metadata").fetchone()[0])
+                if (item.get("schema_version")==1 and item.get("source_metadata")==metadata
+                    and set(item["options"])=={"customers","merchants","case_count"}):
+                    return item["options"]
+            except (OSError,ValueError,KeyError,TypeError):
+                pass
         with closing(self.connect()) as db:
             customers=[dict(row) for row in db.execute("SELECT * FROM customers ORDER BY customer_id")]
             merchants=[dict(row) for row in db.execute("SELECT merchant,category,AVG(merchant_lat) AS merchant_lat,AVG(merchant_lon) AS merchant_lon FROM transactions GROUP BY merchant,category ORDER BY merchant")]

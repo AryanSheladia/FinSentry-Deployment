@@ -4,6 +4,8 @@ FinSentry investigates simulated USD card payments using a trained LightGBM clas
 
 This repository contains the complete deployment source. The team's submission repository remains [FinSentry-AI](https://github.com/AryanSheladia/FinSentry-AI).
 
+Live student demo: **[finsentry-ai.onrender.com](https://finsentry-ai.onrender.com)**. Free hosting can take about a minute to wake after inactivity. The three verified demo cases are saved in the review workspace.
+
 ## Architecture
 
 The root Dockerfile builds the React website and serves it with FastAPI on a single public origin. The Supervisor delegates to parallel Risk and Behavior branches, joins their outputs, checks Fraud Intelligence, performs at most one follow-up and sends the accumulated evidence to Decision & Explanation. Groq generates the explanation from fixed assessment facts; a factual template is used when the provider is unavailable.
@@ -43,6 +45,8 @@ python deployment/build_artifacts.py --source E:\FinSentry --output E:\FinSentry
 ```
 
 The model's simulated-data test F1 is approximately 0.7990. That metric describes the classifier, not real-bank performance or the accuracy of every final policy decision. Unknown history, unsupported dates and missing evidence affect the final assessment independently of the model score.
+
+The Docker build also precomputes the customer/merchant dropdown catalog from the full source store. The runtime checks its source-build metadata before using it. This avoids scanning 1.85 million history rows when a free instance starts; it does not change scoring or customer-history calculations.
 
 ## Verification
 

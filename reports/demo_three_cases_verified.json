@@ -1,0 +1,226 @@
+{
+  "verification": "Read-only execution of current model and complete agent graph, using current source and submitted prior history; no case saved and no LLM request needed for action calculation.",
+  "cases": [
+    {
+      "sample": 1,
+      "payment": {
+        "merchant": "fraud_Quitzon-Goyette",
+        "category": "home",
+        "amount": 47.36,
+        "home_lat": 35.2289,
+        "home_lon": -88.64399999999999,
+        "transaction_id": "DEMO_VERIFY_0",
+        "merchant_lat": 34.286087,
+        "merchant_lon": -89.047646,
+        "customer_id": "CUST_37c586d030d10f7e",
+        "timestamp": 1592760430,
+        "device_id": "SIM_DEVICE_37c586d030d10f7e",
+        "payment_method": "CARD",
+        "unseen_category": false,
+        "unseen_merchant": false
+      },
+      "utc": "2020-06-21T17:27:10+00:00",
+      "action": "CLEAR",
+      "level": "LOW",
+      "model_percent": 0.0003010435178850747,
+      "evidence": "HIGH",
+      "history_count": 1032,
+      "mean_30d": 54.07306671142578,
+      "findings": [],
+      "prior_cases": 0,
+      "stages": [
+        "supervisor",
+        "behavior",
+        "risk",
+        "intelligence",
+        "decision"
+      ],
+      "features": {
+        "amount": 47.36000061035156,
+        "log_amount": 3.8786730766296387,
+        "hour": 17.0,
+        "weekday": 6.0,
+        "home_distance_km": 111.13195037841797,
+        "history_count": 1032.0,
+        "count_1h": 0.0,
+        "count_24h": 3.0,
+        "mean_30d": 54.07306671142578,
+        "amount_ratio_30d": 0.8758519291877747,
+        "std_30d": 57.697349548339844,
+        "amount_z_30d": -0.11634965986013412,
+        "seconds_since_previous": 7201.0,
+        "new_merchant": 0.0,
+        "new_category": 0.0,
+        "category": "home",
+        "merchant": "fraud_Quitzon-Goyette"
+      }
+    },
+    {
+      "sample": "behavior",
+      "payment": {
+        "customer_id": "CUST_00686b4dd6551bfe",
+        "amount": 47.72,
+        "currency": "USD",
+        "merchant": "fraud_Lockman, West and Runte",
+        "category": "grocery_pos",
+        "home_lat": 32.3739,
+        "home_lon": -90.1293,
+        "merchant_lat": -33.8688,
+        "merchant_lon": 151.2093,
+        "device_id": "SIM_DEVICE_00686b4dd6551bfe",
+        "payment_method": "CARD",
+        "timestamp": 1594782900,
+        "transaction_id": "DEMO_VERIFY_BEHAVIOR",
+        "unseen_category": false,
+        "unseen_merchant": false
+      },
+      "utc": "2020-07-15T03:15:00+00:00",
+      "action": "FLAG",
+      "level": "MEDIUM",
+      "model_percent": 0.016392014130574104,
+      "evidence": "HIGH",
+      "history_count": 520,
+      "mean_30d": 155.32687377929688,
+      "findings": [
+        {
+          "code": "UNUSUAL_TIME",
+          "detail": "Unusual transaction time: 03:00 UTC hour; only 1 of 99 prior 90-day payments (1.0%) occurred within one hour of this hour of day."
+        },
+        {
+          "code": "UNUSUAL_LOCATION",
+          "detail": "Unusual merchant location: 14,389 km from the customer's recorded home, above both 300 km and the prior 95th percentile (123 km)."
+        }
+      ],
+      "time_profile": {
+        "current_hour_utc": 3,
+        "prior_90d_count": 99,
+        "nearby_hour_count": 1,
+        "nearby_hour_share": 0.010101010101010102,
+        "window_hours_utc": [
+          2,
+          3,
+          4
+        ],
+        "minimum_history": 60,
+        "rare_share_threshold": 0.05
+      },
+      "prior_cases": 0,
+      "stages": [
+        "supervisor",
+        "behavior",
+        "risk",
+        "intelligence",
+        "decision"
+      ],
+      "features": {
+        "amount": 47.720001220703125,
+        "log_amount": 3.886089563369751,
+        "hour": 3.0,
+        "weekday": 2.0,
+        "home_distance_km": 14388.7705078125,
+        "history_count": 520.0,
+        "count_1h": 0.0,
+        "count_24h": 1.0,
+        "mean_30d": 155.32687377929688,
+        "amount_ratio_30d": 0.3072230815887451,
+        "std_30d": 476.9444580078125,
+        "amount_z_30d": -0.2256172001361847,
+        "seconds_since_previous": 69506.0,
+        "new_merchant": 0.0,
+        "new_category": 0.0,
+        "category": "grocery_pos",
+        "merchant": "fraud_Lockman, West and Runte"
+      }
+    },
+    {
+      "sample": 12,
+      "payment": {
+        "merchant": "fraud_Welch Inc",
+        "category": "misc_net",
+        "amount": 677.77,
+        "home_lat": 38.0174,
+        "home_lon": -84.4854,
+        "transaction_id": "DEMO_VERIFY_11",
+        "merchant_lat": 37.650845,
+        "merchant_lon": -84.899474,
+        "customer_id": "CUST_4edfc01f18a27d90",
+        "timestamp": 1599261960,
+        "device_id": "SIM_DEVICE_4edfc01f18a27d90",
+        "payment_method": "CARD",
+        "unseen_category": false,
+        "unseen_merchant": false
+      },
+      "utc": "2020-09-04T23:26:00+00:00",
+      "action": "ESCALATE",
+      "level": "HIGH",
+      "model_percent": 99.99325103770342,
+      "evidence": "MEDIUM",
+      "history_count": 6,
+      "mean_30d": 669.969970703125,
+      "findings": [
+        {
+          "code": "NEW_MERCHANT",
+          "detail": "No earlier payment to this merchant for this customer."
+        }
+      ],
+      "prior_cases": 0,
+      "stages": [
+        "supervisor",
+        "behavior",
+        "risk",
+        "intelligence",
+        "follow_up",
+        "decision"
+      ],
+      "features": {
+        "amount": 677.77001953125,
+        "log_amount": 6.52028226852417,
+        "hour": 23.0,
+        "weekday": 4.0,
+        "home_distance_km": 54.6228141784668,
+        "history_count": 6.0,
+        "count_1h": 1.0,
+        "count_24h": 6.0,
+        "mean_30d": 669.969970703125,
+        "amount_ratio_30d": 1.011642336845398,
+        "std_30d": 365.59869384765625,
+        "amount_z_30d": 0.021334867924451828,
+        "seconds_since_previous": 1323.0,
+        "new_merchant": 1.0,
+        "new_category": 0.0,
+        "category": "misc_net",
+        "merchant": "fraud_Welch Inc"
+      }
+    }
+  ],
+  "model": {
+    "threshold": 0.32717085825081416,
+    "features": [
+      "amount",
+      "log_amount",
+      "hour",
+      "weekday",
+      "home_distance_km",
+      "history_count",
+      "count_1h",
+      "count_24h",
+      "mean_30d",
+      "amount_ratio_30d",
+      "std_30d",
+      "amount_z_30d",
+      "seconds_since_previous",
+      "new_merchant",
+      "new_category",
+      "category",
+      "merchant"
+    ],
+    "best_iteration": 480,
+    "calibration_a": 0.8461000394934468,
+    "calibration_b": 0.9240983807021317
+  },
+  "source_label_check": {
+    "safe": 0,
+    "high": 1
+  },
+  "source_label_note": "Checked only after model/workflow verification; source labels are not submitted as features. The modified time/location case has no ground-truth label."
+}

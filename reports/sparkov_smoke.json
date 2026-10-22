@@ -1,0 +1,71 @@
+{
+  "checked_at_utc": "2026-10-22T01:00:35.290424+00:00",
+  "health": {
+    "status": "ready",
+    "model_version": "sparkov-v2",
+    "explanation_provider": "groq",
+    "explanation_model": "openai/gpt-oss-20b",
+    "groq_key_configured": true,
+    "workflow_mode": "SPARKOV_FIVE_AGENT_V2"
+  },
+  "checks": [
+    {
+      "investigation_id": "SPINV_04e3faff68364631b41997437009deca",
+      "model_score": 1.246528362318056e-05,
+      "recommendation": "CLEAR",
+      "risk_level": "LOW",
+      "history_count": 1033,
+      "case_count": 0,
+      "evidence_confidence": "HIGH",
+      "explanation_mode": "llm",
+      "fallback_reason": null,
+      "completed_stages": [
+        "supervisor",
+        "behavior",
+        "risk",
+        "intelligence",
+        "decision"
+      ]
+    },
+    {
+      "investigation_id": "SPINV_9fa665ee14484970ab390924aa0c1395",
+      "model_score": 0.999932510377034,
+      "recommendation": "ESCALATE",
+      "risk_level": "HIGH",
+      "history_count": 6,
+      "case_count": 0,
+      "evidence_confidence": "MEDIUM",
+      "explanation_mode": "llm",
+      "fallback_reason": null,
+      "completed_stages": [
+        "supervisor",
+        "behavior",
+        "risk",
+        "intelligence",
+        "follow_up",
+        "decision"
+      ]
+    },
+    {
+      "investigation_id": "SPINV_c2553780a25e4426ab05f000679a80c6",
+      "model_score": 8.280500818062898e-05,
+      "recommendation": "FLAG",
+      "risk_level": "MEDIUM",
+      "history_count": 2089,
+      "case_count": 7,
+      "evidence_confidence": "HIGH",
+      "explanation_mode": "llm",
+      "fallback_reason": null,
+      "completed_stages": [
+        "supervisor",
+        "behavior",
+        "risk",
+        "intelligence",
+        "follow_up",
+        "decision"
+      ]
+    }
+  ],
+  "review_persistence_verified": true,
+  "note": "New submissions from label-free examples and one prior-case-linked source payment, not a representative model/policy evaluation. Automated review is marked as a test."
+}

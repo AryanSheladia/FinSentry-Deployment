@@ -1,0 +1,18 @@
+{
+  "removed_tables": [
+    "investigations",
+    "synthetic_customer_history",
+    "demo_transactions"
+  ],
+  "sparkov_counts_before": {
+    "sparkov_payments": 16,
+    "sparkov_investigations": 16,
+    "sparkov_reviews": 1
+  },
+  "sparkov_counts_after": {
+    "sparkov_payments": 16,
+    "sparkov_investigations": 16,
+    "sparkov_reviews": 1
+  },
+  "sparkov_records_preserved": true
+}

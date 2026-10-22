@@ -1,0 +1,4 @@
+# Bound integration points so dependency resolution doesn't scan old releases.
+uvicorn==0.44.0
+langgraph==1.2.16
+langchain-core==1.6.12

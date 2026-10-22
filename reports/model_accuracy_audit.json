@@ -1,0 +1,590 @@
+{
+  "checked_at_utc": "2026-10-22T20:50:18.794322+00:00",
+  "model_version": "sparkov-v2",
+  "model_sha256_verified": "077b918bb1d3c76e64789b1e0c71620bfbeb19e72c5d2ccc45953e96949364fe",
+  "dataset_provenance_verified": true,
+  "stored_evaluation_reproduced": true,
+  "test_rows": 555719,
+  "test_fraud_rows": 2145,
+  "test_fraud_prevalence": 0.0038598644278853163,
+  "always_nonfraud_accuracy": 0.9961401355721147,
+  "always_nonfraud_recall": 0.0,
+  "threshold": 0.32717085825081416,
+  "test_metrics": {
+    "average_precision": 0.8686465900676643,
+    "roc_auc": 0.9963888273617414,
+    "precision": 0.8323232323232324,
+    "recall": 0.7682983682983683,
+    "f1": 0.799030303030303,
+    "review_rate": 0.0035629517795864457,
+    "confusion_matrix": [
+      [
+        553242,
+        332
+      ],
+      [
+        497,
+        1648
+      ]
+    ],
+    "accuracy": 0.9985082388761226,
+    "balanced_accuracy": 0.8838493145743848,
+    "brier_score": 0.001127884951420172,
+    "log_loss": 0.004717803661347403
+  },
+  "raw_probability_metrics": {
+    "brier_score": 0.001236016995963785,
+    "log_loss": 0.005776863144234119
+  },
+  "calibration_bins": [
+    {
+      "min_score": 0,
+      "max_score_exclusive": 0.001,
+      "count": 529049,
+      "mean_prediction": 8.649904381303272e-05,
+      "observed_fraud_rate": 8.127791565620575e-05
+    },
+    {
+      "min_score": 0.001,
+      "max_score_exclusive": 0.01,
+      "count": 19698,
+      "mean_prediction": 0.0028595355708475544,
+      "observed_fraud_rate": 0.0036044268453650115
+    },
+    {
+      "min_score": 0.01,
+      "max_score_exclusive": 0.05,
+      "count": 3400,
+      "mean_prediction": 0.02192532845875412,
+      "observed_fraud_rate": 0.03558823529411765
+    },
+    {
+      "min_score": 0.05,
+      "max_score_exclusive": 0.1,
+      "count": 739,
+      "mean_prediction": 0.07124373438836422,
+      "observed_fraud_rate": 0.10419485791610285
+    },
+    {
+      "min_score": 0.1,
+      "max_score_exclusive": 0.2,
+      "count": 549,
+      "mean_prediction": 0.14230306172449994,
+      "observed_fraud_rate": 0.15300546448087432
+    },
+    {
+      "min_score": 0.2,
+      "max_score_exclusive": 0.32717085825081416,
+      "count": 304,
+      "mean_prediction": 0.2581372438671397,
+      "observed_fraud_rate": 0.33223684210526316
+    },
+    {
+      "min_score": 0.32717085825081416,
+      "max_score_exclusive": 0.5,
+      "count": 240,
+      "mean_prediction": 0.4047256405892584,
+      "observed_fraud_rate": 0.4166666666666667
+    },
+    {
+      "min_score": 0.5,
+      "max_score_exclusive": 0.8,
+      "count": 362,
+      "mean_prediction": 0.6553766500454183,
+      "observed_fraud_rate": 0.6049723756906077
+    },
+    {
+      "min_score": 0.8,
+      "max_score_exclusive": 0.95,
+      "count": 313,
+      "mean_prediction": 0.8850401937205804,
+      "observed_fraud_rate": 0.865814696485623
+    },
+    {
+      "min_score": 0.95,
+      "max_score_exclusive": 1.0000001,
+      "count": 1065,
+      "mean_prediction": 0.9906178177962981,
+      "observed_fraud_rate": 0.9934272300469483
+    }
+  ],
+  "operating_point_diagnostics": [
+    {
+      "threshold": 0.05,
+      "development": {
+        "average_precision": 0.893365175057824,
+        "roc_auc": 0.9950340720118497,
+        "precision": 0.6390605686032138,
+        "recall": 0.9022687609075044,
+        "f1": 0.748191027496382,
+        "review_rate": 0.008318680527706656,
+        "confusion_matrix": [
+          [
+            96386,
+            292
+          ],
+          [
+            56,
+            517
+          ]
+        ]
+      },
+      "existing_test_diagnostic": {
+        "average_precision": 0.8686465900676643,
+        "roc_auc": 0.9963888273617414,
+        "precision": 0.5347144456886898,
+        "recall": 0.8904428904428905,
+        "f1": 0.6681826132587021,
+        "review_rate": 0.006427708968021608,
+        "confusion_matrix": [
+          [
+            551912,
+            1662
+          ],
+          [
+            235,
+            1910
+          ]
+        ]
+      }
+    },
+    {
+      "threshold": 0.1,
+      "development": {
+        "average_precision": 0.893365175057824,
+        "roc_auc": 0.9950340720118497,
+        "precision": 0.7258297258297258,
+        "recall": 0.8778359511343804,
+        "f1": 0.7946287519747235,
+        "review_rate": 0.007125890736342043,
+        "confusion_matrix": [
+          [
+            96488,
+            190
+          ],
+          [
+            70,
+            503
+          ]
+        ]
+      },
+      "existing_test_diagnostic": {
+        "average_precision": 0.8686465900676643,
+        "roc_auc": 0.9963888273617414,
+        "precision": 0.6470172961524885,
+        "recall": 0.8545454545454545,
+        "f1": 0.7364403374849338,
+        "review_rate": 0.005097900197761819,
+        "confusion_matrix": [
+          [
+            552574,
+            1000
+          ],
+          [
+            312,
+            1833
+          ]
+        ]
+      }
+    },
+    {
+      "threshold": 0.2,
+      "development": {
+        "average_precision": 0.893365175057824,
+        "roc_auc": 0.9950340720118497,
+        "precision": 0.8240418118466899,
+        "recall": 0.8254799301919721,
+        "f1": 0.8247602441150829,
+        "review_rate": 0.005902252933131793,
+        "confusion_matrix": [
+          [
+            96577,
+            101
+          ],
+          [
+            100,
+            473
+          ]
+        ]
+      },
+      "existing_test_diagnostic": {
+        "average_precision": 0.8686465900676643,
+        "roc_auc": 0.9963888273617414,
+        "precision": 0.7657618213660246,
+        "recall": 0.8153846153846154,
+        "f1": 0.7897945360126439,
+        "review_rate": 0.0041099908406946675,
+        "confusion_matrix": [
+          [
+            553039,
+            535
+          ],
+          [
+            396,
+            1749
+          ]
+        ]
+      }
+    },
+    {
+      "threshold": 0.32717085825081416,
+      "development": {
+        "average_precision": 0.893365175057824,
+        "roc_auc": 0.9950340720118497,
+        "precision": 0.898238747553816,
+        "recall": 0.8010471204188482,
+        "f1": 0.8468634686346863,
+        "review_rate": 0.005254444684373426,
+        "confusion_matrix": [
+          [
+            96626,
+            52
+          ],
+          [
+            114,
+            459
+          ]
+        ]
+      },
+      "existing_test_diagnostic": {
+        "average_precision": 0.8686465900676643,
+        "roc_auc": 0.9963888273617414,
+        "precision": 0.8323232323232324,
+        "recall": 0.7682983682983683,
+        "f1": 0.799030303030303,
+        "review_rate": 0.0035629517795864457,
+        "confusion_matrix": [
+          [
+            553242,
+            332
+          ],
+          [
+            497,
+            1648
+          ]
+        ]
+      }
+    },
+    {
+      "threshold": 0.5,
+      "development": {
+        "average_precision": 0.893365175057824,
+        "roc_auc": 0.9950340720118497,
+        "precision": 0.9314159292035398,
+        "recall": 0.7347294938917975,
+        "f1": 0.8214634146341463,
+        "review_rate": 0.004647767118075906,
+        "confusion_matrix": [
+          [
+            96647,
+            31
+          ],
+          [
+            152,
+            421
+          ]
+        ]
+      },
+      "existing_test_diagnostic": {
+        "average_precision": 0.8686465900676643,
+        "roc_auc": 0.9963888273617414,
+        "precision": 0.8896551724137931,
+        "recall": 0.7216783216783217,
+        "f1": 0.7969111969111969,
+        "review_rate": 0.0031310788366062706,
+        "confusion_matrix": [
+          [
+            553382,
+            192
+          ],
+          [
+            597,
+            1548
+          ]
+        ]
+      }
+    },
+    {
+      "threshold": 0.8,
+      "development": {
+        "average_precision": 0.893365175057824,
+        "roc_auc": 0.9950340720118497,
+        "precision": 0.9779005524861878,
+        "recall": 0.6178010471204188,
+        "f1": 0.7572192513368984,
+        "review_rate": 0.0037223267627068102,
+        "confusion_matrix": [
+          [
+            96670,
+            8
+          ],
+          [
+            219,
+            354
+          ]
+        ]
+      },
+      "existing_test_diagnostic": {
+        "average_precision": 0.8686465900676643,
+        "roc_auc": 0.9963888273617414,
+        "precision": 0.9644412191582002,
+        "recall": 0.6195804195804195,
+        "f1": 0.7544706216292932,
+        "review_rate": 0.0024796704809445062,
+        "confusion_matrix": [
+          [
+            553525,
+            49
+          ],
+          [
+            816,
+            1329
+          ]
+        ]
+      }
+    }
+  ],
+  "monthly_test_diagnostics": [
+    {
+      "month": "2020-06",
+      "rows": 30058,
+      "fraud_rows": 133,
+      "metrics": {
+        "average_precision": 0.875489148822404,
+        "roc_auc": 0.9975181060420475,
+        "precision": 0.824,
+        "recall": 0.7744360902255639,
+        "f1": 0.7984496124031008,
+        "review_rate": 0.004158626655133409,
+        "confusion_matrix": [
+          [
+            29903,
+            22
+          ],
+          [
+            30,
+            103
+          ]
+        ]
+      }
+    },
+    {
+      "month": "2020-07",
+      "rows": 85848,
+      "fraud_rows": 321,
+      "metrics": {
+        "average_precision": 0.8630379699234234,
+        "roc_auc": 0.9956794172629605,
+        "precision": 0.8372093023255814,
+        "recall": 0.7850467289719626,
+        "f1": 0.8102893890675241,
+        "review_rate": 0.003506196999347684,
+        "confusion_matrix": [
+          [
+            85478,
+            49
+          ],
+          [
+            69,
+            252
+          ]
+        ]
+      }
+    },
+    {
+      "month": "2020-08",
+      "rows": 88759,
+      "fraud_rows": 415,
+      "metrics": {
+        "average_precision": 0.8609198369190276,
+        "roc_auc": 0.9972518162844259,
+        "precision": 0.8538011695906432,
+        "recall": 0.7036144578313253,
+        "f1": 0.7714663143989432,
+        "review_rate": 0.003853130386777679,
+        "confusion_matrix": [
+          [
+            88294,
+            50
+          ],
+          [
+            123,
+            292
+          ]
+        ]
+      }
+    },
+    {
+      "month": "2020-09",
+      "rows": 69533,
+      "fraud_rows": 340,
+      "metrics": {
+        "average_precision": 0.9036591059435249,
+        "roc_auc": 0.9980006903112437,
+        "precision": 0.8717948717948718,
+        "recall": 0.8,
+        "f1": 0.8343558282208589,
+        "review_rate": 0.0044870780780348896,
+        "confusion_matrix": [
+          [
+            69153,
+            40
+          ],
+          [
+            68,
+            272
+          ]
+        ]
+      }
+    },
+    {
+      "month": "2020-10",
+      "rows": 69348,
+      "fraud_rows": 384,
+      "metrics": {
+        "average_precision": 0.8798543959797436,
+        "roc_auc": 0.9951059535288943,
+        "precision": 0.8658892128279884,
+        "recall": 0.7734375,
+        "f1": 0.8170563961485557,
+        "review_rate": 0.0049460691007671455,
+        "confusion_matrix": [
+          [
+            68918,
+            46
+          ],
+          [
+            87,
+            297
+          ]
+        ]
+      }
+    },
+    {
+      "month": "2020-11",
+      "rows": 72635,
+      "fraud_rows": 294,
+      "metrics": {
+        "average_precision": 0.8946512744551985,
+        "roc_auc": 0.9964548570841781,
+        "precision": 0.8450704225352113,
+        "recall": 0.8163265306122449,
+        "f1": 0.8304498269896193,
+        "review_rate": 0.003909960762717698,
+        "confusion_matrix": [
+          [
+            72297,
+            44
+          ],
+          [
+            54,
+            240
+          ]
+        ]
+      }
+    },
+    {
+      "month": "2020-12",
+      "rows": 139538,
+      "fraud_rows": 258,
+      "metrics": {
+        "average_precision": 0.8094804447627578,
+        "roc_auc": 0.9947881185187164,
+        "precision": 0.7032967032967034,
+        "recall": 0.7441860465116279,
+        "f1": 0.7231638418079096,
+        "review_rate": 0.00195645630580917,
+        "confusion_matrix": [
+          [
+            139199,
+            81
+          ],
+          [
+            66,
+            192
+          ]
+        ]
+      }
+    }
+  ],
+  "training_gain_importance_not_causal_explanation": [
+    {
+      "feature": "amount",
+      "gain_share": 0.43626474878056115
+    },
+    {
+      "feature": "category",
+      "gain_share": 0.16588419921785122
+    },
+    {
+      "feature": "hour",
+      "gain_share": 0.1517168861755009
+    },
+    {
+      "feature": "merchant",
+      "gain_share": 0.07923716153873601
+    },
+    {
+      "feature": "mean_30d",
+      "gain_share": 0.02942508271442486
+    },
+    {
+      "feature": "std_30d",
+      "gain_share": 0.026916131807248257
+    },
+    {
+      "feature": "seconds_since_previous",
+      "gain_share": 0.02564441805215863
+    },
+    {
+      "feature": "amount_z_30d",
+      "gain_share": 0.02514628881438346
+    },
+    {
+      "feature": "log_amount",
+      "gain_share": 0.01939369715045614
+    },
+    {
+      "feature": "history_count",
+      "gain_share": 0.013170202737842892
+    },
+    {
+      "feature": "count_24h",
+      "gain_share": 0.01238228785642043
+    },
+    {
+      "feature": "amount_ratio_30d",
+      "gain_share": 0.006150629769627645
+    },
+    {
+      "feature": "count_1h",
+      "gain_share": 0.0037581661053063624
+    },
+    {
+      "feature": "home_distance_km",
+      "gain_share": 0.002467373298762362
+    },
+    {
+      "feature": "weekday",
+      "gain_share": 0.0018722814379319992
+    },
+    {
+      "feature": "new_merchant",
+      "gain_share": 0.0004941415128734729
+    },
+    {
+      "feature": "new_category",
+      "gain_share": 7.630302991422014e-05
+    }
+  ],
+  "full_agent_policy_evaluated": false,
+  "model_or_database_modified": false,
+  "limitations": [
+    "Synthetic card-payment data; real-world performance is unverified.",
+    "Classifier metrics do not measure full multi-agent review policy.",
+    "Current test set has now been inspected; future tuning needs a fresh time holdout.",
+    "Threshold comparisons are diagnostics. No new operating point was selected or deployed.",
+    "Gain importance is descriptive; it does not measure generalization or causal effects."
+  ],
+  "elapsed_seconds": 34.09
+}

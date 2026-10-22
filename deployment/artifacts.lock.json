@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "url": "https://github.com/AryanSheladia/FinSentry-Deployment/releases/download/artifacts-v1/finsentry-artifacts-v1.tar.gz",
+  "archive_sha256": "bab4360069cab455338c0c1b5642fd24d32c67411fa7c6b4a7a481f6f56b2e7a",
+  "archive_size": 239007418,
+  "files": [
+    {
+      "path": "models/sparkov_v2/pipeline.joblib",
+      "size": 1897994,
+      "sha256": "077b918bb1d3c76e64789b1e0c71620bfbeb19e72c5d2ccc45953e96949364fe"
+    },
+    {
+      "path": "models/sparkov_v2/metadata.json",
+      "size": 5737,
+      "sha256": "527083cce6c8eaf2a9f22e99bb164f0692f7e6e574990805453eb7f0260712d8"
+    },
+    {
+      "path": "runtime/sparkov/history.sqlite",
+      "size": 559595520,
+      "sha256": "6cbd69c2afa4e18f6e1d0b62caacf7e4ff9bbecbf249fbfba7d5130b7adfba9c"
+    }
+  ],
+  "description": "Existing trained Sparkov model and matching read-only label-free source history; no credentials, submitted payments or analyst reviews."
+}

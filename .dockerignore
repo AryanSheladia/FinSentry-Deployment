@@ -1,0 +1,13 @@
+.git
+.venv
+.pytest_cache
+.env
+.env.*
+runtime
+dataset
+**/__pycache__
+**/*.pyc
+frontend/node_modules
+frontend/dist
+frontend/tsconfig.tsbuildinfo
+reports

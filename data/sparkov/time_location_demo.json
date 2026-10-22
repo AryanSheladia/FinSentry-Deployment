@@ -1,0 +1,17 @@
+{
+  "note": "Counterfactual simulation: source customer's prior median amount, rare time, distant merchant coordinates; no fraud label supplied.",
+  "transaction": {
+    "customer_id": "CUST_00686b4dd6551bfe",
+    "amount": 47.72,
+    "currency": "USD",
+    "merchant": "fraud_Lockman, West and Runte",
+    "category": "grocery_pos",
+    "home_lat": 32.3739,
+    "home_lon": -90.1293,
+    "merchant_lat": -33.8688,
+    "merchant_lon": 151.2093,
+    "device_id": "SIM_DEVICE_00686b4dd6551bfe",
+    "payment_method": "CARD",
+    "timestamp": 1594782900
+  }
+}

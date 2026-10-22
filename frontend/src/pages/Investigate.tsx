@@ -1,0 +1,6 @@
+import type { PaymentInput, SparkovOptions } from '../sparkovTypes'
+import { PaymentForm } from '../components/PaymentForm'
+
+export function Investigate({ options, busy, onSubmit }: { options: SparkovOptions; busy: boolean; onSubmit: (payment: PaymentInput) => Promise<void> }) {
+  return <><div className="page-intro"><div><div className="eyebrow">NEW INVESTIGATION</div><h1>Check a payment</h1><p>Get a recommendation supported by customer history and earlier fraud records.</p></div></div><div className="investigate-layout"><PaymentForm options={options} busy={busy} onSubmit={onSubmit} /><aside className="card guidance-card"><h2>What happens next?</h2><ol><li><strong>Payment checks</strong><p>We assess the amount, timing, merchant and location.</p></li><li><strong>Customer comparison</strong><p>We look for changes from the customer’s earlier activity.</p></li><li><strong>Fraud record checks</strong><p>We check relevant records that were already known at the payment time.</p></li><li><strong>Your next action</strong><p>The case shows whether to investigate further or escalate for review.</p></li></ol><div className="simulation-note">Use demo payments to explore the workflow. A payment from an unfamiliar customer or date may need review because information is limited.</div></aside></div></>
+}

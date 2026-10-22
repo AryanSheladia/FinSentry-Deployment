@@ -1,0 +1,9 @@
+{
+  "sparkov_source_hash_checks": {
+    "fraudTrain.csv": true,
+    "fraudTest.csv": true
+  },
+  "sparkov_model_unchanged": true,
+  "frontend_secret_absent": true,
+  "shared_example_key_empty": true
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "cause": "Running backend exposed GET only; updated DELETE route had not been loaded",
+  "resolution": "Restarted root foreground launcher with current source",
+  "live_delete_test": "Passed: disposable payment/case/review removed via actual HTTP DELETE; GET 404; direct/proxied lists exclude case; MySQL confirms absence",
+  "existing_records_preserved": true,
+  "record_counts": {
+    "payments": 20,
+    "cases": 20,
+    "reviews": 3
+  }
+}

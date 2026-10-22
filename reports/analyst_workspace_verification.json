@@ -1,0 +1,33 @@
+{
+  "recorded_at_utc": "2026-10-22T01:01:18.930337+00:00",
+  "python_tests_passed": 21,
+  "frontend_logic_and_server_render_tests_passed": 6,
+  "frontend_build": "passed",
+  "startup": "passed",
+  "live_groq_and_mysql": "verified in sparkov_smoke.json",
+  "built_assets_http": {
+    "/assets/index-o3XrahA0.js": 200,
+    "/assets/index-DS6IH7hl.css": 200
+  },
+  "retired_routes_http": {
+    "/transactions": 404,
+    "/model": 404,
+    "/investigations": 404
+  },
+  "retired_assets_removed_from_active_paths": true,
+  "recoverable_archive": "runtime/retired-backup-20261022",
+  "permanently_deleted_files": 0,
+  "archive_entries": 62,
+  "sparkov_source_hash_checks": {
+    "fraudTrain.csv": true,
+    "fraudTest.csv": true
+  },
+  "sparkov_model_unchanged": true,
+  "existing_case_preserved": "SPINV_3eb2259f81e7444d8b79c3364be82f08",
+  "sparkov_database_records_preserved": true,
+  "frontend_secret_absent": true,
+  "no_retired_dataset_mentions_in_built_ui": true,
+  "browser_visual_check": "Unavailable: cua_repl kernel assets could not initialize; no interactive visual QA claimed",
+  "scope_note": "Retired tests were archived with their implementation; these checks cover the active Sparkov-only workspace.",
+  "docker_compose_syntax": "passed; container execution not verified"
+}

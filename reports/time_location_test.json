@@ -1,0 +1,233 @@
+{
+  "checked_at_utc": "2026-10-21T21:15:33.860033+00:00",
+  "purpose": "Normal amount; isolate unusual time and location using prior customer history, no supplied labels or forced scores.",
+  "checks": [
+    {
+      "scenario": "normal",
+      "investigation_id": "SPINV_ba095096136040f4b24509d74a64fc4e",
+      "input": {
+        "customer_id": "CUST_00686b4dd6551bfe",
+        "amount": 47.72,
+        "currency": "USD",
+        "merchant": "fraud_Lockman, West and Runte",
+        "category": "grocery_pos",
+        "home_lat": 32.3739,
+        "home_lon": -90.1293,
+        "merchant_lat": 32.3739,
+        "merchant_lon": -90.1293,
+        "device_id": "SIM_DEVICE_00686b4dd6551bfe",
+        "payment_method": "CARD",
+        "timestamp": "2020-07-15T22:15:00+00:00"
+      },
+      "model_risk": 0.002188884869533077,
+      "threshold": 0.32717085825081416,
+      "recommendation": "CLEAR",
+      "risk_level": "LOW",
+      "evidence_confidence": "HIGH",
+      "behavior_codes": [],
+      "behavior": {
+        "findings": [],
+        "provenance": "Prior Sparkov simulated payments plus earlier user-submitted payments; devices/payment method are additional simulated context.",
+        "time_profile": {
+          "minimum_history": 60,
+          "prior_90d_count": 99,
+          "current_hour_utc": 22,
+          "window_hours_utc": [
+            21,
+            22,
+            23
+          ],
+          "nearby_hour_count": 22,
+          "nearby_hour_share": 0.2222222222222222,
+          "rare_share_threshold": 0.05
+        },
+        "history_count": 520,
+        "history_status": "AVAILABLE",
+        "recent_30d_count": 31,
+        "baseline_mean_30d": 158.70323181152344
+      },
+      "explanation_mode": "llm",
+      "fallback_reason": null,
+      "explanation": "Transaction model risk is 0.22%, below the review threshold of 32.72%. The combined assessment is LOW; recommended action: CLEAR. The model score of 0.0022 is far below the threshold of 0.327, and the model_flag is false, indicating no model\u2011level risk. The behavior profile shows no unusual time findings; the transaction occurred at 22:00 UTC, which is within the normal activity window for this user (nearby_hour_share 0.222). No new merchant or category flags are present, and the transaction amount of $47.72 is well within the user\u2019s historical spending range (mean 158.70, amount_ratio 0.30). All evidence is synthetic and fully covered by the simulation, giving high confidence that the decision is correct. Therefore the recommendation is CLEAR with a LOW risk level. "
+    },
+    {
+      "scenario": "unusual_time",
+      "investigation_id": "SPINV_deb9a0a65c494c12a88637f2b9e5cc5f",
+      "input": {
+        "customer_id": "CUST_00686b4dd6551bfe",
+        "amount": 47.72,
+        "currency": "USD",
+        "merchant": "fraud_Lockman, West and Runte",
+        "category": "grocery_pos",
+        "home_lat": 32.3739,
+        "home_lon": -90.1293,
+        "merchant_lat": 32.3739,
+        "merchant_lon": -90.1293,
+        "device_id": "SIM_DEVICE_00686b4dd6551bfe",
+        "payment_method": "CARD",
+        "timestamp": "2020-07-15T03:15:00+00:00"
+      },
+      "model_risk": 0.00016240222379969833,
+      "threshold": 0.32717085825081416,
+      "recommendation": "FLAG",
+      "risk_level": "MEDIUM",
+      "evidence_confidence": "HIGH",
+      "behavior_codes": [
+        "UNUSUAL_TIME"
+      ],
+      "behavior": {
+        "findings": [
+          {
+            "code": "UNUSUAL_TIME",
+            "detail": "Unusual transaction time: 03:00 UTC hour; only 1 of 99 prior 90-day payments (1.0%) occurred within one hour of this hour of day."
+          }
+        ],
+        "provenance": "Prior Sparkov simulated payments plus earlier user-submitted payments; devices/payment method are additional simulated context.",
+        "time_profile": {
+          "minimum_history": 60,
+          "prior_90d_count": 99,
+          "current_hour_utc": 3,
+          "window_hours_utc": [
+            2,
+            3,
+            4
+          ],
+          "nearby_hour_count": 1,
+          "nearby_hour_share": 0.010101010101010102,
+          "rare_share_threshold": 0.05
+        },
+        "history_count": 520,
+        "history_status": "AVAILABLE",
+        "recent_30d_count": 32,
+        "baseline_mean_30d": 155.32687377929688
+      },
+      "explanation_mode": "template",
+      "fallback_reason": "INVALID_OUTPUT",
+      "explanation": "Transaction model risk is 0.02%, below the review threshold of 32.72%. The combined assessment is MEDIUM; recommended action: FLAG. Unusual transaction time: 03:00 UTC hour; only 1 of 99 prior 90-day payments (1.0%) occurred within one hour of this hour of day. This assessment concerns simulated card-payment data; it is not a guarantee of fraud or safety."
+    },
+    {
+      "scenario": "unusual_location",
+      "investigation_id": "SPINV_6fab78eb2ef1485a8d27514290d2890c",
+      "input": {
+        "customer_id": "CUST_00686b4dd6551bfe",
+        "amount": 47.72,
+        "currency": "USD",
+        "merchant": "fraud_Lockman, West and Runte",
+        "category": "grocery_pos",
+        "home_lat": 32.3739,
+        "home_lon": -90.1293,
+        "merchant_lat": -33.8688,
+        "merchant_lon": 151.2093,
+        "device_id": "SIM_DEVICE_00686b4dd6551bfe",
+        "payment_method": "CARD",
+        "timestamp": "2020-07-15T22:15:00+00:00"
+      },
+      "model_risk": 0.003003179062956909,
+      "threshold": 0.32717085825081416,
+      "recommendation": "FLAG",
+      "risk_level": "MEDIUM",
+      "evidence_confidence": "HIGH",
+      "behavior_codes": [
+        "UNUSUAL_LOCATION"
+      ],
+      "behavior": {
+        "findings": [
+          {
+            "code": "UNUSUAL_LOCATION",
+            "detail": "Unusual merchant location: 14,389 km from the customer's recorded home, above both 300 km and the prior 95th percentile (123 km)."
+          }
+        ],
+        "provenance": "Prior Sparkov simulated payments plus earlier user-submitted payments; devices/payment method are additional simulated context.",
+        "time_profile": {
+          "minimum_history": 60,
+          "prior_90d_count": 100,
+          "current_hour_utc": 22,
+          "window_hours_utc": [
+            21,
+            22,
+            23
+          ],
+          "nearby_hour_count": 22,
+          "nearby_hour_share": 0.22,
+          "rare_share_threshold": 0.05
+        },
+        "history_count": 521,
+        "history_status": "AVAILABLE",
+        "recent_30d_count": 32,
+        "baseline_mean_30d": 155.23500061035156
+      },
+      "explanation_mode": "llm",
+      "fallback_reason": null,
+      "explanation": "Transaction model risk is 0.30%, below the review threshold of 32.72%. The combined assessment is MEDIUM; recommended action: FLAG. The assessment indicates a low model score (0.003) that is well below the model\u2019s threshold (0.327), so the model itself does not flag the payment.  However, the behavior findings identify a single unusual location event: the merchant is 14,389\u202fkm from the customer\u2019s recorded home, exceeding both the 300\u202fkm rule and the prior 95th percentile of 123\u202fkm.  This unusual merchant location is the sole evidence supporting the recommendation to flag the transaction.  No other behavior findings or missing coverage issues are present, and the evidence confidence is high because the data come from the simulated payment history and device context.  The risk level is set to MEDIUM based on the combination of the low model score and the single unusual location finding.  No additional cases or guarantees are referenced in the evidence."
+    },
+    {
+      "scenario": "unusual_time_and_location",
+      "investigation_id": "SPINV_3eb2259f81e7444d8b79c3364be82f08",
+      "input": {
+        "customer_id": "CUST_00686b4dd6551bfe",
+        "amount": 47.72,
+        "currency": "USD",
+        "merchant": "fraud_Lockman, West and Runte",
+        "category": "grocery_pos",
+        "home_lat": 32.3739,
+        "home_lon": -90.1293,
+        "merchant_lat": -33.8688,
+        "merchant_lon": 151.2093,
+        "device_id": "SIM_DEVICE_00686b4dd6551bfe",
+        "payment_method": "CARD",
+        "timestamp": "2020-07-15T03:15:00+00:00"
+      },
+      "model_risk": 0.00016392014130574105,
+      "threshold": 0.32717085825081416,
+      "recommendation": "FLAG",
+      "risk_level": "MEDIUM",
+      "evidence_confidence": "HIGH",
+      "behavior_codes": [
+        "UNUSUAL_LOCATION",
+        "UNUSUAL_TIME"
+      ],
+      "behavior": {
+        "findings": [
+          {
+            "code": "UNUSUAL_TIME",
+            "detail": "Unusual transaction time: 03:00 UTC hour; only 1 of 99 prior 90-day payments (1.0%) occurred within one hour of this hour of day."
+          },
+          {
+            "code": "UNUSUAL_LOCATION",
+            "detail": "Unusual merchant location: 14,389 km from the customer's recorded home, above both 300 km and the prior 95th percentile (123 km)."
+          }
+        ],
+        "provenance": "Prior Sparkov simulated payments plus earlier user-submitted payments; devices/payment method are additional simulated context.",
+        "time_profile": {
+          "minimum_history": 60,
+          "prior_90d_count": 99,
+          "current_hour_utc": 3,
+          "window_hours_utc": [
+            2,
+            3,
+            4
+          ],
+          "nearby_hour_count": 1,
+          "nearby_hour_share": 0.010101010101010102,
+          "rare_share_threshold": 0.05
+        },
+        "history_count": 520,
+        "history_status": "AVAILABLE",
+        "recent_30d_count": 32,
+        "baseline_mean_30d": 155.32687377929688
+      },
+      "explanation_mode": "llm",
+      "fallback_reason": null,
+      "explanation": "Transaction model risk is 0.02%, below the review threshold of 32.72%. The combined assessment is MEDIUM; recommended action: FLAG. The assessment indicates a medium risk for the payment. The model score is 0.00016, well below the threshold of 0.327, so the model did not flag the transaction. However, two behavior findings are present: an unusual transaction time at 03:00 UTC (only 1.0% of prior 90\u2011day payments occurred within one hour of this hour) and an unusual merchant location 14,389 km from the customer\u2019s home, exceeding both the 300 km rule and the prior 95th percentile of 123 km. These findings are sufficient to recommend flagging the payment for review. The evidence confidence is high, based on the synthetic simulation data and the documented behavior findings. No additional cases or guarantees are cited. The recommendation is to flag the transaction for further investigation."
+    }
+  ],
+  "verification": {
+    "tests_passed": 67,
+    "frontend_build": "passed",
+    "named_preset_available": true,
+    "saved_result_survived_backend_restart": true,
+    "dashboard_assets_http": "passed",
+    "browser_visual": "Unavailable: browser automation kernel initialization failed",
+    "result_url": "http://127.0.0.1:8000/?investigation=SPINV_3eb2259f81e7444d8b79c3364be82f08"
+  }
+}

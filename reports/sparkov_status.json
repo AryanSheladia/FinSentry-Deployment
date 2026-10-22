@@ -1,0 +1,31 @@
+{
+  "version": "sparkov-only-analyst-workspace",
+  "recorded_at_utc": "2026-10-22T01:01:18.930337+00:00",
+  "classifier_test_metrics": {
+    "average_precision": 0.8686465900676643,
+    "roc_auc": 0.9963888273617414,
+    "precision": 0.8323232323232324,
+    "recall": 0.7682983682983683,
+    "f1": 0.799030303030303,
+    "review_rate": 0.0035629517795864457,
+    "confusion_matrix": [
+      [
+        553242,
+        332
+      ],
+      [
+        497,
+        1648
+      ]
+    ],
+    "brier_score": 0.001127884951420172,
+    "log_loss": 0.004717803661347403
+  },
+  "verification_report": "reports/analyst_workspace_verification.json",
+  "backend_tests_passed": 21,
+  "frontend_tests_passed": 6,
+  "guide": "reports/SPARKOV_DEMO_GUIDE.md",
+  "url": "http://127.0.0.1:8000/",
+  "browser_visual_check": "Unavailable: cua_repl kernel assets could not initialize; no interactive visual QA claimed",
+  "recoverable_retirement": "runtime/retired-backup-20261022"
+}

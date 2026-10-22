@@ -1,0 +1,217 @@
+{
+  "model_version": "sparkov-v2",
+  "trained_at_utc": "2026-10-21T18:07:44.472270+00:00",
+  "features": [
+    "amount",
+    "log_amount",
+    "hour",
+    "weekday",
+    "home_distance_km",
+    "history_count",
+    "count_1h",
+    "count_24h",
+    "mean_30d",
+    "amount_ratio_30d",
+    "std_30d",
+    "amount_z_30d",
+    "seconds_since_previous",
+    "new_merchant",
+    "new_category",
+    "category",
+    "merchant"
+  ],
+  "threshold": 0.32717085825081416,
+  "score_type": "sigmoid_calibrated_simulation_probability",
+  "source": {
+    "fraudTrain.csv": {
+      "rows": 1296675,
+      "fraud_rows": 7506,
+      "sha256": "fd7139200dbfcbed0b6742bbe05a4f1abce532c4fef20918228a651647a3e75d",
+      "min_timestamp": 1546300818,
+      "max_timestamp": 1592741617
+    },
+    "fraudTest.csv": {
+      "rows": 555719,
+      "fraud_rows": 2145,
+      "sha256": "12d553ab19440c752d2531ee1af44bb64f12cc3d3839f1649f19e81c230545f0",
+      "min_timestamp": 1592741665,
+      "max_timestamp": 1609459174
+    }
+  },
+  "selected": {
+    "num_leaves": 63,
+    "scale_pos_weight": 1.0,
+    "best_iteration": 480,
+    "validation": {
+      "average_precision": 0.919788276620051,
+      "roc_auc": 0.997397235538642,
+      "precision": 0.9236430542778289,
+      "recall": 0.8019169329073482,
+      "f1": 0.8584865327062847,
+      "review_rate": 0.0055886602125438944,
+      "confusion_matrix": [
+        [
+          193166,
+          83
+        ],
+        [
+          248,
+          1004
+        ]
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "num_leaves": 31,
+      "scale_pos_weight": 1.0,
+      "best_iteration": 817,
+      "validation": {
+        "average_precision": 0.9169238749870463,
+        "roc_auc": 0.9975288218016396,
+        "precision": 0.9073569482288828,
+        "recall": 0.797923322683706,
+        "f1": 0.8491287717807054,
+        "review_rate": 0.005660639276918885,
+        "confusion_matrix": [
+          [
+            193147,
+            102
+          ],
+          [
+            253,
+            999
+          ]
+        ]
+      }
+    },
+    {
+      "num_leaves": 63,
+      "scale_pos_weight": 1.0,
+      "best_iteration": 480,
+      "validation": {
+        "average_precision": 0.919788276620051,
+        "roc_auc": 0.997397235538642,
+        "precision": 0.9236430542778289,
+        "recall": 0.8019169329073482,
+        "f1": 0.8584865327062847,
+        "review_rate": 0.0055886602125438944,
+        "confusion_matrix": [
+          [
+            193166,
+            83
+          ],
+          [
+            248,
+            1004
+          ]
+        ]
+      }
+    },
+    {
+      "num_leaves": 63,
+      "scale_pos_weight": 4.0,
+      "best_iteration": 557,
+      "validation": {
+        "average_precision": 0.9110333098781946,
+        "roc_auc": 0.9972747834792826,
+        "precision": 0.8837814397224631,
+        "recall": 0.8138977635782748,
+        "f1": 0.8474012474012474,
+        "review_rate": 0.005927990087454563,
+        "confusion_matrix": [
+          [
+            193115,
+            134
+          ],
+          [
+            233,
+            1019
+          ]
+        ]
+      }
+    }
+  ],
+  "metrics": {
+    "threshold": {
+      "average_precision": 0.893365175057824,
+      "roc_auc": 0.9950340720118497,
+      "precision": 0.898238747553816,
+      "recall": 0.8010471204188482,
+      "f1": 0.8468634686346863,
+      "review_rate": 0.005254444684373426,
+      "confusion_matrix": [
+        [
+          96626,
+          52
+        ],
+        [
+          114,
+          459
+        ]
+      ]
+    },
+    "test": {
+      "average_precision": 0.8686465900676643,
+      "roc_auc": 0.9963888273617414,
+      "precision": 0.8323232323232324,
+      "recall": 0.7682983682983683,
+      "f1": 0.799030303030303,
+      "review_rate": 0.0035629517795864457,
+      "confusion_matrix": [
+        [
+          553242,
+          332
+        ],
+        [
+          497,
+          1648
+        ]
+      ],
+      "brier_score": 0.001127884951420172,
+      "log_loss": 0.004717803661347403
+    }
+  },
+  "splits": {
+    "train": {
+      "rows": 907672,
+      "fraud_rows": 5121,
+      "min_timestamp": 1546300818,
+      "max_timestamp": 1577553504
+    },
+    "validation": {
+      "rows": 194501,
+      "fraud_rows": 1252,
+      "min_timestamp": 1577553518,
+      "max_timestamp": 1585936432
+    },
+    "calibration": {
+      "rows": 97251,
+      "fraud_rows": 560,
+      "min_timestamp": 1585936484,
+      "max_timestamp": 1589654634
+    },
+    "threshold": {
+      "rows": 97251,
+      "fraud_rows": 573,
+      "min_timestamp": 1589654646,
+      "max_timestamp": 1592741617
+    },
+    "test": {
+      "rows": 555719,
+      "fraud_rows": 2145,
+      "min_timestamp": 1592741665,
+      "max_timestamp": 1609459174
+    }
+  },
+  "history_policy": "Strictly earlier unlabeled transactions; earlier test features may inform later test payments; no test labels in history/intelligence",
+  "case_policy": "Development fraud rows only, available 24h after event; delay is a simulation assumption",
+  "simulated_context": "Stable per-customer SIM_DEVICE and CARD payment method; not ML input; not observed source fields",
+  "limitations": [
+    "Synthetic card-payment environment, not validated for real banking, UPI or transfers",
+    "Calibration measured on this simulation; score is not evidence-confidence",
+    "No raw customer IDs, names, dates of birth or addresses used as predictive features"
+  ],
+  "elapsed_seconds": 117.03,
+  "bundle_sha256": "077b918bb1d3c76e64789b1e0c71620bfbeb19e72c5d2ccc45953e96949364fe"
+}

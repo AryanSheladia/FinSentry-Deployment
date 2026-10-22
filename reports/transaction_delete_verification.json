@@ -1,0 +1,21 @@
+{
+  "feature": "Delete submitted transaction from review queue and MySQL",
+  "date": "2026-10-22",
+  "endpoint": "DELETE /v2/investigations/{identifier}",
+  "scope": [
+    "submitted payment",
+    "all investigations for that payment",
+    "associated review notes"
+  ],
+  "active_cases": "QUEUED and RUNNING are rejected with HTTP 409",
+  "database": "Single transaction, payment/case row locks, child records deleted before parent; rollback verified",
+  "source_data": "Original Sparkov history and trained model are unchanged",
+  "checks": {
+    "deletion_tests_sqlite_and_mysql": "10 passed",
+    "backend_regressions": "25 passed, 6 optional MySQL checks skipped; deletion MySQL checks separately passed",
+    "frontend_tests": "7 passed",
+    "production_build": "passed",
+    "browser": "Verified visible Delete buttons and payment-specific confirmation on local review queue. Confirmation cancelled; no existing transaction deleted. Subsequent screenshot capture timed out."
+  },
+  "loading_change": "Restart an already running backend to load the new DELETE endpoint. Frontend production assets rebuilt."
+}

@@ -18,6 +18,26 @@ def payment():
                 device_id="TEST_DEVICE",payment_method="CARD")
 
 
+def test_cutoff_demo_submits_through_real_investigation_pipeline(tmp_path):
+    with TestClient(create_app(f"sqlite:///{(tmp_path/'cutoff_demo.sqlite').as_posix()}")) as client:
+        client.app.state.sparkov.explainer=SparkovExplainer(api_key="")
+        client.app.state.sparkov.predictor.bundle["model"].set_params(n_jobs=2)
+        options=client.get("/v2/options").json()
+        demo=dict(options["threshold_demo"])
+        from datetime import datetime,timezone
+        demo["timestamp"]=datetime.fromtimestamp(demo["timestamp"],timezone.utc).isoformat()
+        response=client.post("/v2/investigate",json=demo)
+        assert response.status_code==202,response.text
+        identifier=response.json()["investigation_id"]
+        saved=client.get(f"/v2/investigations/{identifier}").json()
+        assert saved["status"]=="COMPLETED",saved.get("error")
+        risk=saved["result"]["risk"]
+        assert risk["threshold"] <= risk["risk_score"] < risk["threshold"]+.001
+        assert risk["model_flag"] is True
+        assert saved["result"]["recommendation"] in {"FLAG","ESCALATE"}
+        assert client.delete(f"/v2/investigations/{identifier}").status_code==200
+
+
 def test_workspace_runs_without_retired_model_and_routes_are_gone(tmp_path):
     assert not Path("models/lightgbm_pipeline.joblib").exists()
     assert not Path("dataset/train_transaction.csv").exists()

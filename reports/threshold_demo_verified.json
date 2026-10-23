@@ -1,0 +1,26 @@
+{
+  "payment": {
+    "customer_id": "CUST_e8ea2c5345495b65",
+    "timestamp": 1603481359,
+    "amount": 15.0,
+    "currency": "USD",
+    "merchant": "fraud_Raynor, Reinger and Hagenes",
+    "category": "gas_transport",
+    "home_lat": 30.592,
+    "home_lon": -97.2893,
+    "merchant_lat": 31.541407,
+    "merchant_lon": -97.736629,
+    "device_id": "SIM_DEVICE_e8ea2c5345495b65",
+    "payment_method": "CARD",
+    "transaction_id": "DEMO_THRESHOLD_VERIFICATION"
+  },
+  "timestamp_utc": "2020-10-23T19:29:19+00:00",
+  "risk_percent": 32.745176377865036,
+  "threshold_percent": 32.71708582508141,
+  "recommendation": "FLAG",
+  "risk_level": "MEDIUM",
+  "evidence_confidence": "HIGH",
+  "history_count": 3861,
+  "findings": [],
+  "verification": "Read-only production graph, source history, no LLM request, no saved case; counterfactual example, not confirmed fraud."
+}

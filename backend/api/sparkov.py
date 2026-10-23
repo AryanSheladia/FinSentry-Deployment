@@ -33,6 +33,8 @@ class SparkovService:
         options["examples"]=json.loads(example_path.read_text())["transactions"] if example_path.exists() else []
         behavior_demo=ROOT/"data/sparkov/time_location_demo.json"
         options["behavior_demo"]=json.loads(behavior_demo.read_text(encoding="utf-8"))["transaction"] if behavior_demo.exists() else None
+        threshold_demo=ROOT/"data/sparkov/threshold_demo.json"
+        options["threshold_demo"]=json.loads(threshold_demo.read_text(encoding="utf-8"))["transaction"] if threshold_demo.exists() else None
         options["metadata"]=self.predictor.metadata
         return options
 

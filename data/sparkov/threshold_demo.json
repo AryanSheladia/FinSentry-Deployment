@@ -1,0 +1,23 @@
+{
+  "note": "Counterfactual simulation selected to demonstrate a model score just above the review cutoff. This is not a confirmed fraud case or an accuracy test. Other form fields must remain unchanged; additional earlier submitted customer payments can change the score.",
+  "verification": {
+    "model_version": "sparkov-v2",
+    "history_source": "Strictly earlier Sparkov source payments",
+    "risk_score": 0.3274517637786504,
+    "threshold": 0.32717085825081416
+  },
+  "transaction": {
+    "customer_id": "CUST_e8ea2c5345495b65",
+    "timestamp": 1603481359,
+    "amount": 15.0,
+    "currency": "USD",
+    "merchant": "fraud_Raynor, Reinger and Hagenes",
+    "category": "gas_transport",
+    "home_lat": 30.592,
+    "home_lon": -97.2893,
+    "merchant_lat": 31.541407,
+    "merchant_lon": -97.736629,
+    "device_id": "SIM_DEVICE_e8ea2c5345495b65",
+    "payment_method": "CARD"
+  }
+}

@@ -16,6 +16,7 @@ export interface Customer { customer_id: string; home_lat: number; home_lon: num
 export interface Merchant { merchant: string; category: string; merchant_lat: number; merchant_lon: number }
 export interface SparkovOptions {
   behavior_demo?: Payment | null
+  threshold_demo?: Payment | null
   customers: Customer[]; merchants: Merchant[]; case_count: number; examples: Payment[]
   metadata: { model_version: string; threshold: number; metrics: { test: { f1: number; precision: number; recall: number; average_precision: number } }; features: string[]; splits: { test: { min_timestamp: number; max_timestamp: number } } }
 }

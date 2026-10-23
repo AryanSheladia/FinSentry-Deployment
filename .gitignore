@@ -16,6 +16,7 @@ models/sparkov_v2/*.joblib
 data/sparkov/*.json
 !data/sparkov/examples.json
 !data/sparkov/time_location_demo.json
+!data/sparkov/threshold_demo.json
 runtime/
 *.log
 frontend/dist/
